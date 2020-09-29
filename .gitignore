@@ -128,27 +128,3 @@ GitHub.sublime-settings
 environment.yml
 
 Pipfile
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/app/interfaz/node_modules
-/app/interfaz/.pnp
-/app/interfaz/.pnp.js
-
-/app/interfaz/# testing
-/app/interfaz/coverage
-
-/app/interfaz/# production
-/app/interfaz/build
-
-/app/interfaz/# misc
-/app/interfaz/.DS_Store
-/app/interfaz/.env.local
-/app/interfaz/.env.development.local
-/app/interfaz/.env.test.local
-/app/interfaz/.env.production.local
-
-/app/interfaz/npm-debug.log*
-/app/interfaz/yarn-debug.log*
-/app/interfaz/yarn-error.log*
