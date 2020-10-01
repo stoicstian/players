@@ -106,4 +106,3 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [(BASE_DIR / "interfaz/build/static/").resolve()]
-print(STATICFILES_DIRS)
