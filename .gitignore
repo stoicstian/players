@@ -128,3 +128,4 @@ GitHub.sublime-settings
 environment.yml
 
 Pipfile
+../node_modules/*
