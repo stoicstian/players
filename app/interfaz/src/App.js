@@ -1,13 +1,17 @@
 import React, { Fragment } from "react";
-import NavBar from "./components/NavBar";
+import { Header, Footer } from "./components/exports";
 import "./App.scss";
+import { CssBaseline } from "@material-ui/core";
 
 function App() {
   return (
     <Fragment>
-      <div className="App">
-        <NavBar></NavBar>
-      </div>
+      <CssBaseline>
+        <div className="App">
+          <Header></Header>
+          <Footer></Footer>
+        </div>
+      </CssBaseline>
     </Fragment>
   );
 }
