@@ -1,35 +1,74 @@
+"""Django Database model."""
 from django.db import models
 
-# Create your models here.
+
 class Jugador(models.Model):
+    """Tabla en BD de Jugador."""
+
     name = models.CharField("Nombre", max_length=40)
     surname = models.CharField("Apellidos", max_length=40)
     age = models.IntegerField("Edad", blank=False, null=False)
 
+    class Meta:
+        """Metadatos del la clase."""
+
+        ordering = ["name"]
+        verbose_name_plural = "Jugadores Verbose"
+        verbose_name = "Jugador Verbose"
+
     def __str__(self):
+        """Muestra objeto como nombre y apellido."""
         return self.name + " " + self.surname
 
 
 class JugadorHabilidades(models.Model):
+    """Tabla en BD con las habilidades de los jugadores."""
+
     class Habilidades(models.IntegerChoices):
+        """Clase auxiliar para creación de lista de opciones."""
+
         MALO = 1
         PESIMO = 2
         REGULAR = 3
         SOBRESALIENTE = 4
         EXCELENTE = 5
 
+    # suit = models.IntegerField(choices=Suit.choices)
     jugador = models.OneToOneField(Jugador, on_delete=models.CASCADE)
-    form = models.IntegerChoices("Forma", max_length=20)
-    experience = models.CharField("Experiencia", max_length=20)
-    discipline = models.CharField("Disciplina", max_length=20)
-    stamina = models.CharField("Condición", max_length=20)
-    pace = models.CharField("Rápidez", max_length=20)
-    technique = models.CharField("Técnica", max_length=20)
-    keeper = models.CharField("Guardameta", max_length=20)
-    defending = models.CharField("Defensa", max_length=20)
-    passing = models.CharField("Pases", max_length=20)
-    playmaking = models.CharField("Creación", max_length=20)
-    scoring = models.CharField("Anotación", max_length=20)
+    forma = models.IntegerField(
+        "Forma", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    experience = models.IntegerField(
+        "Experiencia", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    discipline = models.IntegerField(
+        "Disciplina", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    stamina = models.IntegerField(
+        "Condición", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    pace = models.IntegerField(
+        "Rápidez", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    technique = models.IntegerField(
+        "Técnica", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    keeper = models.IntegerField(
+        "Guardameta", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    defending = models.IntegerField(
+        "Defensa", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    passing = models.IntegerField(
+        "Pases", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    playmaking = models.IntegerField(
+        "Creación", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
+    scoring = models.IntegerField(
+        "Anotación", choices=Habilidades.choices, default=Habilidades.REGULAR
+    )
 
     def __str__(self) -> str:
-        return self.id
+        """Muestra objeto según su ID."""
+        return str(self.id)

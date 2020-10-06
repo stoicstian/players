@@ -8,35 +8,65 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Jugador',
+            name="Jugador",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=40, verbose_name='Nombre')),
-                ('surname', models.CharField(max_length=40, verbose_name='Apellidos')),
-                ('age', models.IntegerField(verbose_name='Edad')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=40, verbose_name="Nombre")),
+                ("surname", models.CharField(max_length=40, verbose_name="Apellidos")),
+                ("age", models.IntegerField(verbose_name="Edad")),
             ],
         ),
         migrations.CreateModel(
-            name='JugadorHabilidades',
+            name="JugadorHabilidades",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('form', models.CharField(max_length=20, verbose_name='Forma')),
-                ('experience', models.CharField(max_length=20, verbose_name='Experiencia')),
-                ('discipline', models.CharField(max_length=20, verbose_name='Disciplina')),
-                ('stamina', models.CharField(max_length=20, verbose_name='Condición')),
-                ('pace', models.CharField(max_length=20, verbose_name='Rápidez')),
-                ('technique', models.CharField(max_length=20, verbose_name='Técnica')),
-                ('keeper', models.CharField(max_length=20, verbose_name='Guardameta')),
-                ('defending', models.CharField(max_length=20, verbose_name='Defensa')),
-                ('passing', models.CharField(max_length=20, verbose_name='Pases')),
-                ('playmaking', models.CharField(max_length=20, verbose_name='Creación')),
-                ('scoring', models.CharField(max_length=20, verbose_name='Anotación')),
-                ('jugador', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='jugadores.jugador')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("form", models.CharField(max_length=20, verbose_name="Forma")),
+                (
+                    "experience",
+                    models.CharField(max_length=20, verbose_name="Experiencia"),
+                ),
+                (
+                    "discipline",
+                    models.CharField(max_length=20, verbose_name="Disciplina"),
+                ),
+                ("stamina", models.CharField(max_length=20, verbose_name="Condición")),
+                ("pace", models.CharField(max_length=20, verbose_name="Rápidez")),
+                ("technique", models.CharField(max_length=20, verbose_name="Técnica")),
+                ("keeper", models.CharField(max_length=20, verbose_name="Guardameta")),
+                ("defending", models.CharField(max_length=20, verbose_name="Defensa")),
+                ("passing", models.CharField(max_length=20, verbose_name="Pases")),
+                (
+                    "playmaking",
+                    models.CharField(max_length=20, verbose_name="Creación"),
+                ),
+                ("scoring", models.CharField(max_length=20, verbose_name="Anotación")),
+                (
+                    "jugador",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="jugadores.jugador",
+                    ),
+                ),
             ],
         ),
     ]
