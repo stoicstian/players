@@ -1,5 +1,19 @@
 .navbar {
-  background-color: rgba(80, 73, 68, 0.705);
-  color: white;
-  line-height: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid blue;
+  background-color: #000;
+  line-height: 30px;
+  display: flex;
+
+  &__box {
+    background-color: blue;
+    display: inline;
+  }
+
+  &__link {
+    color: red;
+    line-height: 30px;
+  }
 }

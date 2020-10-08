@@ -33,7 +33,6 @@ class JugadorHabilidades(models.Model):
         SOBRESALIENTE = 4
         EXCELENTE = 5
 
-    # suit = models.IntegerField(choices=Suit.choices)
     jugador = models.OneToOneField(Jugador, on_delete=models.CASCADE)
     forma = models.IntegerField(
         "Forma", choices=Habilidades.choices, default=Habilidades.REGULAR
